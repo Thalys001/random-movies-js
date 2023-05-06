@@ -2,13 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css">
-    <title>Vite App</title>
+    <title>Random movies</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/favico/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
-    <div id="app"><h1>random movies...</h1></div>
-    <script type="module" src="/main.js"></script>
+    <div class="container">
+      <img class="logo" src="/assets/logo.svg" alt="logo" />
+      <h1 class="title">Não sabe o que asisstir?</h1>
+      <button class="btn">Encontrar filme</button>
+      <p class="text">
+        Clique em "Encontrar filme" que traremos informações de algum filme para
+        você assistir hoje.
+      </p>
+    </div>
+    <script type="module" src="/api.js"></script>
   </body>
 </html>
