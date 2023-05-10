@@ -9,16 +9,26 @@ function getMovie() {
   // https://api.themoviedb.org/3/movie/444?api_key=399681cd4e2ca9464a1c616336559ad8&language=pt-BR
   const url = `${BASE_URL}${id}?${API_KEY}&${language}`;
 
-  axios.get(url).then((response) => {
-    const data = response.data;
-    console.log(data, "<data>");
-    const film = document.querySelector("#film");
+  axios
+    .get(url)
+    .then((response) => {
+      const data = response.data;
+      console.log(data, "<data>");
+      const film = document.querySelector("#film");
 
-    film.innerHTML = `
+      film.innerHTML = `
       <div>
         <h2>${data.title}</h2>
         <img src="${IMG_URL + data.poster_path}"/>
       </div>
     `;
-  });
+    })
+    .catch((error) => {
+      const film = document.querySelector("#film");
+      film.innerHTML = `
+      <div id='error'>
+      <h2>erro ao carregar filme</h2>
+      </div>
+      `;
+    });
 }
