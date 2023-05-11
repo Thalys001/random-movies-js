@@ -18,8 +18,8 @@ function getMovie() {
 
       film.innerHTML = `
       <div>
-        <h2>${data.title}</h2>
-        <img src="${IMG_URL + data.poster_path}"/>
+      <img class='banner-movie' src="${IMG_URL + data.poster_path}"/>
+      <h2 class='title-movie'>${data.title}</h2>
       </div>
     `;
     })
@@ -27,7 +27,7 @@ function getMovie() {
       const film = document.querySelector("#film");
       film.innerHTML = `
       <div id='error'>
-      <h2>erro ao carregar filme</h2>
+      <h2>erro ao carregar filme :(</h2>
       </div>
       `;
     });
