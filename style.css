@@ -41,6 +41,8 @@ body {
 
 .banner-movie {
   width: 50%;
+  border: 1px solid #ffff;
+  border-radius: 10px;
 }
 
 .title-movie {
@@ -57,25 +59,11 @@ body {
   font-family: var(--font);
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: q7px;
   line-height: 60px;
 
   color: var(--title);
 }
-
-/* #change-movie {
-  width: 180.98px;
-  height: 47px;
-  background: var(--bg-button);
-  border: 2px solid var(--border-color);
-  border-radius: 5px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 18px;
-  cursor: pointer;
-} */
 
 .text {
   font-family: var(--font);
@@ -93,7 +81,7 @@ button {
   width: 180.98px;
   height: 47px;
   height: 3.5em;
-  border: 3px ridge #149CEA;
+  border: 3px ridge #149cea;
   outline: none;
   background-color: transparent;
   color: white;
@@ -104,10 +92,53 @@ button {
   cursor: pointer;
 }
 
-button:hover::before, button:hover::after {
-  transform: scale(0)
+button:hover::before,
+button:hover::after {
+  transform: scale(0);
 }
 
 button:hover {
-  box-shadow: inset 0px 0px 25px #1479EA;
+  box-shadow: inset 0px 0px 25px #1479ea;
 }
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 0;
+  background-color: rgb(0 0 0 / 80%);
+  overflow: hidden;
+  width: 80%;
+  height: 0;
+
+  transition: 0.5s ease;
+}
+
+.image-container:hover .overlay {
+  height: 100%;
+  width: 80%;
+  border: 1px solid #ffff;
+  border-radius: 10px;
+}
+
+.overlay p {
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--title);
+  line-height: 20px;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+

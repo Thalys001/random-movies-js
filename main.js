@@ -6,7 +6,6 @@ changeMovie.addEventListener("click", getMovie);
 function getMovie() {
   const id = Math.floor(Math.random() * 1000) + 1;
 
-  // https://api.themoviedb.org/3/movie/444?api_key=399681cd4e2ca9464a1c616336559ad8&language=pt-BR
   const url = `${BASE_URL}${id}?${API_KEY}&${language}`;
 
   axios
@@ -17,17 +16,20 @@ function getMovie() {
       const film = document.querySelector("#film");
 
       film.innerHTML = `
-      <div>
-      <img class='banner-movie' src="${IMG_URL + data.poster_path}"/>
-      <h2 class='title-movie'>${data.title}</h2>
+    <div class="image-container">
+      <h2 class="title-movie">${data.title}</h2>
+      <img class="banner-movie" src="${IMG_URL + data.poster_path}" />
+      <div class="overlay">
+        <p class="overview-movie">${data.overview}</p>
       </div>
-    `;
+    </div>
+      `;
     })
     .catch((error) => {
       const film = document.querySelector("#film");
       film.innerHTML = `
       <div id='error'>
-      <h2>erro ao carregar filme :(</h2>
+      <h2>Erro ao carregar filme :(</h2>
       </div>
       `;
     });
